@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>HTML Input Element</h1>
+
+  <label for="a">A:</label>
+  <input type="text" id="a" name="a"><br><br>
+  <label for="b">B:</label>
+  <input type="text" id="b" name="b"><br><br>
+  <label for="c">C:</label>
+  <input type="text" id="c" name="c"><br><br>
+  <input type="submit" value="Gabung" onClick="gabung()">
+  <input type="submit" value="Hitung" onClick="jumlah()">
+  <input type="submit" value="ambil karakter dari A nomer B" onClick="ambil()">
+  <p id="def"></p>
+  <p onClick="teks()">klik teks ini untuk memunculkan karakter tertentu</p>
+
+  <button onClick="tes()"> test </button>
+  <button onClick="tes2()"> test2 </button>
+<script>
+function gabung()
+{
+	var a = document.getElementById("a").value;
+	var b = document.getElementById("b").value;
+    var c = a + b;
+    document.getElementById("c").value = c;
+}
+function jumlah()
+{
+	var a = document.getElementById("a").value;
+	var b = document.getElementById("b").value;
+    var c = parseInt(a) + parseInt(b);
+    document.getElementById("c").value = c;
+}
+function ambil()
+{
+	var a = document.getElementById("a").value;
+	var b = document.getElementById("b").value;
+    var c = a.slice(parseInt(b)-1, parseInt(b));
+    document.getElementById("c").value = c;
+    document.getElementById("def").innerHTML= a.slice(-2, -1);
+}
+function teks()
+{
+  var kataKunci = "+|fwcRcTVj~+$(8T0o+E6}wvgT<V#Em[+:oa3|a<:}o5#gB.o?5o_Pfs{768G}";
+  var a = "+|fwcRcTVj~+$(8T0o+E6}wvgT";
+  var b = "&lt";
+  var c = "V#Em[+:oa3|a";
+  var d = ":}o5#gB.o?5o_Pfs{768G}";
+  document.getElementById("def").innerHTML= a+b+c+b+d;
+}
+
+function tes()
+{
+  let xhr = new XMLHttpRequest();
+  let url = new URL('192.168.43.248:16080/get')
+  url.searchParams.set('set', 'mercon6');
+  xhr.open('GET', url);
+  xhr.send();
+}
+
+function tes2()
+{
+  let xhr = new XMLHttpRequest();
+  let url = new URL('192.168.43.248:16080/get')
+  url.searchParams.set('set', 'kircof6');
+  xhr.open('GET', url);
+  xhr.send();
+}
+</script>
+</body>
+</html>
