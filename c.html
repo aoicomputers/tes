@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="id" >
+<head>
+  <title>Smart Kost Oneecca</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<style media="screen">
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+body,
+h1, h2, h3, h4, h5, h6,
+blockquote, p, pre,
+dl, dd, ol, ul,
+figure,
+hr,
+fieldset, legend {
+  margin: 0;
+  padding: 0;
+}
+
+ table {
+   border-collapse: collapse;
+   width: 100%;
+   margin-top: 1px;
+ }
+
+ td, th {
+   border: 1px solid #dddddd;
+   text-align: left;
+   padding: 8px;
+ }
+
+ tr:nth-child(even) {
+   background-color: #dddddd;
+ }
+
+fieldset {
+  min-width: 0;
+  border: 0;
+}
+
+/* ===== #BOX-SIZING ================ */
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* *, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+} */
+
+   body {
+     font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+     font-weight: 400;
+     font-size: 14px;
+     width: 100%;
+   }
+
+   h1, h2, h3, h4, h5 {
+     font-weight: 400;
+   }
+
+   h1 {
+     font-size: 30px;
+     font-weight: 600;
+     color: #c11cd4;
+     text-align: center;
+   }
+   h2 {
+     font-size: 26px;
+   }
+   h3 {
+     font-size: 24px;
+     font-weight: 500;
+     color: #5562eb;
+   }
+   h4 {
+     font-size: 24px;
+     font-weight: 500;
+     color: white;
+     margin-bottom: 15px;
+   }
+   h5 {
+     font-size: 15px;
+     font-style: italic;
+     font-weight: 700;
+     margin-left: 20px;
+    }
+   .p1 {
+     margin-bottom: 10px;
+     font-weight: 400;
+     text-align: justify;
+   }
+   .b1 {
+     font-weight: 900px;
+     color: #5562eb;
+    }
+   .b2 {
+     font-weight: 300px;
+     color: white;
+   }
+   p, form, button {
+     font-size: 80%;
+     color: #252525;
+   }
+   .small_text {
+     font-size: 70%;
+     color: #737373;
+   }
+
+   .labela {
+     display: block;
+     margin-left: 12px;
+     position: relative;
+     font-size: 18px;
+     font-weight: 600;
+     color: /*#4b2cfc electric*/ #7F00FF /*Pink*/;
+   }
+
+   .labelb {
+     margin-left: 5px;
+     font-size: 18px;
+     font-weight: 600;
+     color:#e80975;
+   }
+
+   .div-title {
+     text-align: center;
+     font-size: 18px;
+     font-weight: 600;
+     color: /*#4b2cfc electric*/ #7F00FF;
+     height: 20px;
+   }
+
+/* ===== # Prevent double click select text ================ */
+div {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+/* ===== #BACKGROUND color =========== */
+.bg1 { /*green*/
+  background: #DCE35B;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #45B649, #DCE35B);  /* Chrome 10-25, Safari 5.1-6 */
+  background: -moz-linear-gradient(to right, #45B649, #DCE35B);  /* Chrome 10-25, Safari 5.1-6 */
+  background: -o-linear-gradient(to right, #45B649, #DCE35B);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #45B649, #DCE35B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.bg2 {
+  background: #00b09b;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #96c93d, #00b09b);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #96c93d, #00b09b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.bg3 { /*Purple*/
+  background: #7F00FF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #E100FF, #7F00FF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #E100FF, #7F00FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* ===== # UI - User Interface ================ */
+.wrapper {
+  display: flex;
+  max-width: 100%;
+  justify-content: center;
+}
+.page-wrapper {
+  width: 100%;
+  min-height: 100vh;
+}
+/* ===== # Card view / Box User Interface ======== */
+.card {
+  width: 680px;
+  /* background: #e6e6e6; */
+  background: rgba(230, 230, 230, 0.92);
+  /*background: rgba(255, 255, 255, 0.87);
+
+  background: #0f0c29;  /* fallback for old browsers
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+
+  */
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 1px 30px 3px rgba(0, 0, 0, 0.95);
+  -moz-box-shadow: 0px 1px 30px 3px rgba(0, 0, 0, 0.95);
+  box-shadow: 0px 1px 30px -5px rgba(0, 0, 0, 0.95);
+  padding: 30px 20px;
+}
+
+.outcard {
+  padding: 10px 10px 10px 10px;
+}
+
+/* ===== garis ============ */
+
+.gsa {
+  padding: 2px;
+  margin-top: 1px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #7F00FF;
+}
+.gsb {
+  padding: 2px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(168, 166, 171, 0.32);
+}
+/* ===== inc #Input and checkbox ================== */
+.infa { /*== input box / input textbox ==*/
+  background-color: #b90303;
+  opacity: 1;
+  display: flex;
+  width: 135px;
+  height: 15px;
+  border-radius: 50px;
+  margin: 3px 0;
+  position: relative;
+  font-size: 10px;
+}
+.infa label { /*== text inside input box ==*/
+  padding: 2px 8px;
+  width: 100%;
+  display: flex;
+  border-radius: 50px;
+  text-align: left;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  font-size: 9px;
+  font-weight: 300;
+}
+.infa input:checked ~ label { /*== animation OnClick text color input box ==*/
+  background-color: #0ba019 /*Pink*//*#ef4a08 orange*/;
+}
+.infa input { /*== for Hide checkBOX ==*/
+  width: 14px;
+  height: 14px;
+  order: 1;
+  z-index: 2;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  cursor: pointer;
+  visibility: hidden;
+}
+.checkbox {
+  position: relative;
+  height: 70px;
+  display: flex;
+  background: white;
+  /* border: 3px solid #29a956; */
+  border-radius: 15px;
+  -webkit-box-shadow: 9px 9px 11px -13px rgba(0, 0, 0, 0.95);
+  -moz-box-shadow: 9px 9px 11px -13px rgba(0, 0, 0, 0.95);
+  box-shadow: 9px 9px 11px -13px rgba(0, 0, 0, 0.95);
+}
+.checkbox:active {
+  -webkit-box-shadow: 0px 1px 50px 30px rgba(0, 255, 208, 0.68);
+  -moz-box-shadow: 0px 1px 50px 30px rgba(0, 255, 208, 0.68);
+  box-shadow: 0px 1px 50px 30px rgba(0, 255, 208, 0.68);
+  background: #fbf5f9;
+  /* border-radius: 30px; */
+  transform: translate(10px, 5px);
+  transition: all 500ms
+}
+
+/* .checkbox:after, .checkbox:before {
+  font-family: FontAwesome;
+  font-feature-settings: normal;
+  -webkit-font-kerning: auto;
+          font-kerning: auto;
+  font-language-override: normal;
+  font-stretch: normal;
+  font-style: normal;
+  font-synthesis: weight style;
+  font-variant: normal;
+  font-weight: normal;
+  text-rendering: auto;
+} */
+.checkbox label2 {
+  position: absolute;
+  color: #dacfcf;
+  font-family: "Poppins";
+}
+.checkbox label {
+  width: 160px;
+  height: 42px;
+  background: #ccc;
+  position: relative;
+  display: inline-block;
+  border-radius: 46px;
+  transition: 0.4s;
+}
+.checkbox label:after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  left: 0;
+  top: -5px;
+  z-index: 2;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: 0.4s;
+}
+.checkbox input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
+}
+.checkbox input:hover + label:after {
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+}
+.checkbox input:checked + label:after {
+  left: 40px;
+}
+
+</style>
+
+    <link rel="shortcut icon" href="https://aoicomputers.github.io/ai/favicon.ico" />
+    <link rel="apple-touch-icon" href="https://aoicomputers.github.io/ai/favicon.ico" />
+    <link rel="icon" sizes="192x192" href="https://aoicomputers.github.io/ai/favicon.ico" />
+</head>
+<body>
+  <div class="page-wrapper bg1 outcard font-poppins">
+    <div class="wrapper">
+      <div class="card">
+        
+        <h3>Oneecca Smart Online Check</h3>
+        <div class="gsa"></div>
+        <h7>Server</h7>
+        <div class="infa">
+          <input id="koneksi1" type="checkbox">
+          <label for="koneksi1" id="tkoneksi1">Loading . . .</label>
+        </div><div class="gsb"></div>
+        
+        <h7>Home</h7>
+        <div class="infa">
+          <input id="koneksi2" type="checkbox">
+          <label for="koneksi2" id="tkoneksi2">Loading . . .</label>
+        </div><div class="gsb"></div>
+        
+        <h7>Kost</h7>
+        <div class="infa">
+          <input id="koneksi3" type="checkbox">
+          <label for="koneksi3" id="tkoneksi3">Loading . . .</label>
+        </div><div class="gsb"></div>
+
+</div> <!-- card -->
+</div> <!-- wrapper -->
+</div> <!-- page-wrapper bg2 outcard font-poppins -->
+
+
+
+<script>
+var po1 = ':16080',
+    po2 = ':16000',
+    po3 = ':16001',
+    si = "http://192.168.43.248",
+    co0 = '/',
+    co1 = '/c',
+    co2 = '/oneecca',
+    co3 = '/kost';
+
+var L1 = si+po1+co1,
+    L2 = si+po2+co0,
+    L3 = si+po3+co0,
+    w0 = "x.x Menghubungkan . . .",
+    w1 = "Terhubung",
+    c1 = document.getElementById("koneksi1"),
+    c2 = document.getElementById("koneksi2"),
+    c3 = document.getElementById("koneksi3"),
+    tc1 = document.getElementById("tkoneksi1"),
+    tc2 = document.getElementById("tkoneksi2"),
+    tc3 =document.getElementById("tkoneksi3");
+    
+c1.disabled = true;
+c2.disabled = true;
+c3.disabled = true;
+/*== Check Koneksi ke Device Smart Home ==*/
+setInterval(function ( ) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+
+    if (this.status == 200) {
+      c1.checked = true; tc1.innerHTML = w1;}
+      else {c1.checked = false; tc1.innerHTML = w0;}
+
+  };
+  xhttp.open("GET", L1, true);
+  xhttp.send();
+}, 2200 ) ;
+
+setInterval(function ( ) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+
+    if (this.status == 200) {
+      c2.checked = true; tc2.innerHTML = w1;}
+      else {c2.checked = false; tc2.innerHTML = w0;}
+
+  };
+  xhttp.open("GET", L2, true);
+  xhttp.send();
+}, 2400 ) ;
+
+setInterval(function ( ) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+
+    if (this.status == 200) {
+      c3.checked = true; tc3.innerHTML = w1;}
+      else {c3.checked = false; tc3.innerHTML = w0;}
+
+  };
+  xhttp.open("GET", L3, true);
+  xhttp.send();
+}, 2600 ) ;
+</script>
+</body>
+</html>
